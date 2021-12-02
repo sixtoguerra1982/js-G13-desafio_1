@@ -41,3 +41,17 @@ INSERT INTO posts(id, nombre_de_usuario, fecha_de_creacion, contenido, descripci
 
  INSERT INTO posts(id, nombre_de_usuario, fecha_de_creacion, contenido, descripcion, titulo) 
  VALUES (6, 'Carlos', '2021-11-30', 'Soy el post de carlos', 'Descripcion de Post 3', 'titulo de carlos');
+
+
+ CREATE TABLE comments( 
+    id SERIAL, 
+    fecha_de_creacion TIMESTAMP, 
+    content VARCHAR(255),  
+    post_id INT, 
+    PRIMARY KEY(id),
+    FOREIGN KEY(post_id) REFERENCES posts(id)
+    );
+
+--id, fecha, hora decreación y contenido,
+
+INSERT INTO comments(fecha_de_creacion,content,post_id) VALUES ('2021-12-31 19:38:00','HOLA SOY UN CONTENIDO',1);
